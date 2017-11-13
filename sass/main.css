@@ -22,8 +22,11 @@ body {
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  justify-content: center;
-  word-break: break-all; }
+  word-break: break-all;
+  flex-direction: column; }
+
+.col-centered {
+  justify-content: center; }
 
 .row {
   display: flex;
@@ -68,7 +71,7 @@ body {
   .col-s-half {
     width: 50%; }
 
-  .col-s-hide {
+  .on-s-hide {
     display: none; }
 
   .profile-container {
@@ -77,10 +80,12 @@ body {
 
   .profile-pic {
     border-radius: 100%;
+    padding: 15px;
+    border: 15px solid #776e65;
     flex: 1; } }
 @media (min-device-width: 520px) and (max-device-width: 10000px) {
   h1 {
-    font-size: 70px;
+    font-size: 60px;
     font-weight: bold;
     color: #776e65; }
 
@@ -88,7 +93,7 @@ body {
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
-    height: 14px;
+    height: 12px;
     background-color: #776e65;
     border: none; }
 
@@ -96,7 +101,7 @@ body {
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
-    font-size: 45px; }
+    font-size: 30px; }
 
   .col-l-1 {
     width: 33.33%; }
@@ -110,7 +115,7 @@ body {
   .col-l-half {
     width: 50%; }
 
-  .col-l-hide {
+  .on-l-hide {
     display: none; }
 
   .profile-container {
@@ -119,6 +124,12 @@ body {
 
   .profile-pic {
     border-radius: 100%;
+    padding: 15px;
+    border: 15px solid #776e65;
     flex: 1; } }
+/** Animations */
+@keyframes pop {
+  50% {
+    transform: scale(1.2); } }
 
 /*# sourceMappingURL=main.css.map */

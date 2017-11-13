@@ -16,8 +16,8 @@ $map: (
     profile-pic-size: 200px
   ),
   l: (
-    font-max: 70px,
-    font-normal: 45px,
+    font-max: 60px,
+    font-normal: 30px,
     min-width: $breaking-point,
     max-width: 10000px,
     container-size: 80%,
@@ -50,8 +50,12 @@ body {
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  justify-content: center;
   word-break: break-all;
+  flex-direction: column;
+}
+
+.col-centered {
+  justify-content: center;
 }
 
 .row {
@@ -63,6 +67,22 @@ body {
   flex-wrap: wrap; // handle overflow through a break
   justify-content: center; // center individual children
   width: 100%;
+}
+
+@mixin parallax-maker($className, $imageUrl) {
+  .#{$className} {
+    background-image: url($imageUrl);
+    height: 500px;
+    width: inherit;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+#the-canvas {
+
 }
 
 @mixin grid-maker($size) {
@@ -99,7 +119,7 @@ body {
     .col-#{$size}-half {
       width: 50%;
     }
-    .col-#{$size}-hide {
+    .on-#{$size}-hide {
       display: none;
     }
     .profile-container {
@@ -108,6 +128,8 @@ body {
     }
     .profile-pic {
       border-radius: 100%;
+      padding: 15px;
+      border: 15px solid #776e65;
       flex: 1;
     }
   }
@@ -116,4 +138,9 @@ body {
 /* Create the actual grid */
 @each $size, $value in $map {
   @include grid-maker($size);
+}
+
+/** Animations */
+@keyframes pop{
+  50%  {transform: scale(1.2);}
 }
