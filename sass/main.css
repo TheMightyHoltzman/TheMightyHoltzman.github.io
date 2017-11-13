@@ -1,0 +1,82 @@
+/**
+ * A very simple layout system: only a single breaking-point
+ * and a 3 column grid
+ */
+* {
+  font-family: 'Barlow', sans-serif;
+  background-color: #faf8ef; }
+
+.title {
+  color: #776e65;
+  font-weight: bold; }
+
+.text-centered {
+  text-align: center; }
+
+.row {
+  width: 100%;
+  display: inline-block; }
+
+/* Create the actual grid */
+@media (min-width: 0px) and (max-width: 520px) {
+  h1 {
+    font-size: 35px;
+    color: #776e65; }
+
+  hr {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 7px;
+    background-color: #776e65;
+    border: none; }
+
+  .container {
+    width: 100%;
+    padding-left: 0%;
+    padding-right: 0%;
+    font-size: 22px; }
+
+  .col {
+    background-color: red; }
+
+  .col-s-1 {
+    width: 100%/3; }
+
+  .col-s-2 {
+    width: 66.6666666667px; }
+
+  .col-3 {
+    width: 100%; } }
+@media (min-width: 520px) and (max-width: 10000px) {
+  h1 {
+    font-size: 50px;
+    color: #776e65; }
+
+  hr {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 10px;
+    background-color: #776e65;
+    border: none; }
+
+  .container {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 35px; }
+
+  .col {
+    background-color: red; }
+
+  .col-l-1 {
+    width: 100%/3; }
+
+  .col-l-2 {
+    width: 66.6666666667px; }
+
+  .col-3 {
+    width: 100%; } }
+
+/*# sourceMappingURL=main.css.map */

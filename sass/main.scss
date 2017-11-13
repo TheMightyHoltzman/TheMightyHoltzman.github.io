@@ -1,0 +1,85 @@
+/**
+ * A very simple layout system: only a single breaking-point
+ * and a 3 column grid
+ */
+
+$breaking-point: 520px;
+
+$map: (
+  s: (
+    font-max: 35px,
+    font-normal: 22px,
+    min-width: 0px,
+    max-width: $breaking-point,
+    container-size: 100%,
+    container-padding: 0%,
+  ),
+  l: (
+    font-max: 50px,
+    font-normal: 35px,
+    min-width: $breaking-point,
+    max-width: 10000px,
+    container-size: 80%,
+    container-padding: 10%
+  )
+);
+
+* {
+  font-family: 'Barlow', sans-serif;
+  background-color: rgb(250, 248, 239);
+}
+
+.title {
+  color: #776e65;
+  font-weight: bold;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.row {
+  width: 100%;
+  display: inline-block;
+}
+
+@mixin grid-maker($size) {
+  $sizeMap: map-get($map, $size);
+  @media (min-width: map-get($sizeMap, min-width)) and (max-width: map-get($sizeMap, max-width)) {
+    h1 {
+      font-size: map-get($sizeMap, font-max);
+      color: #776e65;
+    }
+    hr {
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      height: map-get($sizeMap, font-max)/5;
+      background-color: #776e65;
+      border: none;
+    }
+    .container {
+      width: map-get($sizeMap, container-size);
+      padding-left: map-get($sizeMap, container-padding);
+      padding-right: map-get($sizeMap, container-padding);
+      font-size: map-get($sizeMap, font-normal);
+    }
+    .col {
+      background-color: red;
+    }
+    .col-#{$size}-1 {
+      width: 100%/3;
+    }
+    .col-#{$size}-2 {
+      width: (2*100px)/3;
+    }
+    .col-3 {
+      width: 100%;
+    }
+  }
+}
+
+/* Create the actual grid */
+@each $size, $value in $map {
+  @include grid-maker($size);
+}
