@@ -4,30 +4,49 @@
  */
 * {
   font-family: 'Barlow', sans-serif;
+  color: #776e65;
   background-color: #faf8ef; }
 
+body {
+  margin: 0px 30px 0px 30px; }
+
 .title {
-  color: #776e65;
   font-weight: bold; }
 
 .text-centered {
   text-align: center; }
 
+.col {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: center;
+  word-break: break-all; }
+
 .row {
-  width: 100%;
-  display: inline-block; }
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%; }
 
 /* Create the actual grid */
-@media (min-width: 0px) and (max-width: 520px) {
+@media (min-device-width: 0px) and (max-device-width: 520px) {
   h1 {
-    font-size: 35px;
+    font-size: 70px;
+    font-weight: bold;
     color: #776e65; }
 
   hr {
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
-    height: 7px;
+    height: 14px;
     background-color: #776e65;
     border: none; }
 
@@ -35,29 +54,41 @@
     width: 100%;
     padding-left: 0%;
     padding-right: 0%;
-    font-size: 22px; }
-
-  .col {
-    background-color: red; }
+    font-size: 45px; }
 
   .col-s-1 {
-    width: 100%/3; }
+    width: 33.33%; }
 
   .col-s-2 {
-    width: 66.6666666667px; }
+    width: 66.66%; }
 
-  .col-3 {
-    width: 100%; } }
-@media (min-width: 520px) and (max-width: 10000px) {
+  .col-s-3 {
+    width: 100%; }
+
+  .col-s-half {
+    width: 50%; }
+
+  .col-s-hide {
+    display: none; }
+
+  .profile-container {
+    display: flex;
+    flex-direction: column; }
+
+  .profile-pic {
+    border-radius: 100%;
+    flex: 1; } }
+@media (min-device-width: 520px) and (max-device-width: 10000px) {
   h1 {
-    font-size: 50px;
+    font-size: 70px;
+    font-weight: bold;
     color: #776e65; }
 
   hr {
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
-    height: 10px;
+    height: 14px;
     background-color: #776e65;
     border: none; }
 
@@ -65,18 +96,29 @@
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
-    font-size: 35px; }
-
-  .col {
-    background-color: red; }
+    font-size: 45px; }
 
   .col-l-1 {
-    width: 100%/3; }
+    width: 33.33%; }
 
   .col-l-2 {
-    width: 66.6666666667px; }
+    width: 66.66%; }
 
-  .col-3 {
-    width: 100%; } }
+  .col-l-3 {
+    width: 100%; }
+
+  .col-l-half {
+    width: 50%; }
+
+  .col-l-hide {
+    display: none; }
+
+  .profile-container {
+    display: flex;
+    flex-direction: column; }
+
+  .profile-pic {
+    border-radius: 100%;
+    flex: 1; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -7,30 +7,36 @@ $breaking-point: 520px;
 
 $map: (
   s: (
-    font-max: 35px,
-    font-normal: 22px,
+    font-max: 70px,
+    font-normal: 45px,
     min-width: 0px,
     max-width: $breaking-point,
     container-size: 100%,
     container-padding: 0%,
+    profile-pic-size: 200px
   ),
   l: (
-    font-max: 50px,
-    font-normal: 35px,
+    font-max: 70px,
+    font-normal: 45px,
     min-width: $breaking-point,
     max-width: 10000px,
     container-size: 80%,
-    container-padding: 10%
+    container-padding: 10%,
+    profile-pic-size: 350px
   )
 );
 
 * {
   font-family: 'Barlow', sans-serif;
+  color: #776e65;
   background-color: rgb(250, 248, 239);
 }
 
+body {
+  margin: 0px 30px 0px 30px;
+}
+
 .title {
-  color: #776e65;
   font-weight: bold;
 }
 
@@ -38,16 +44,33 @@ $map: (
   text-align: center;
 }
 
+.col {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: center;
+  word-break: break-all;
+}
+
 .row {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-wrap: wrap; // handle overflow through a break
+  justify-content: center; // center individual children
   width: 100%;
-  display: inline-block;
 }
 
 @mixin grid-maker($size) {
   $sizeMap: map-get($map, $size);
-  @media (min-width: map-get($sizeMap, min-width)) and (max-width: map-get($sizeMap, max-width)) {
+  @media (min-device-width: map-get($sizeMap, min-width)) and (max-device-width: map-get($sizeMap, max-width)) {
     h1 {
       font-size: map-get($sizeMap, font-max);
+      font-weight: bold;
       color: #776e65;
     }
     hr {
@@ -64,17 +87,28 @@ $map: (
       padding-right: map-get($sizeMap, container-padding);
       font-size: map-get($sizeMap, font-normal);
     }
-    .col {
-      background-color: red;
-    }
     .col-#{$size}-1 {
-      width: 100%/3;
+      width: 33.33%;
     }
     .col-#{$size}-2 {
-      width: (2*100px)/3;
+      width: 66.66%;
     }
-    .col-3 {
+    .col-#{$size}-3 {
       width: 100%;
+    }
+    .col-#{$size}-half {
+      width: 50%;
+    }
+    .col-#{$size}-hide {
+      display: none;
+    }
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .profile-pic {
+      border-radius: 100%;
+      flex: 1;
     }
   }
 }
