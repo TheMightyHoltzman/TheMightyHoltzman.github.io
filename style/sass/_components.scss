@@ -54,7 +54,7 @@
       align-self: center;
       @include pop-animation();
       @if $size == 'l' {
-        max-width: 180px;
+        max-width: 150px;
       }
     }
   }

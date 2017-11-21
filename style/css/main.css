@@ -146,7 +146,7 @@
     border: 15px solid #776e65;
     flex: 1;
     align-self: center;
-    max-width: 180px; }
+    max-width: 150px; }
     .profile-pic:hover, .profile-pic:focus {
       animation: 0.3s ease-out 0s  1 pop; } }
 .title {
@@ -163,11 +163,17 @@
 .align-self-centered {
   align-self: center; }
 
+.test-font {
+  font-family: Pacifico; }
+
 * {
   font-family: 'Barlow', sans-serif;
   font-weight: 100;
   color: #776e65;
   background-color: #faf8ef; }
+
+a {
+  color: #4949e0; }
 
 body {
   margin: 0px 30px 0px 30px; }
@@ -178,8 +184,14 @@ p {
 /* Create the actual grid */
 @media (min-device-width: 0px) and (max-device-width: 520px) {
   p {
-    margin: 0px 10px 15px 10px; } }
+    margin: 0px 10px 15px 10px; }
+
+  h2 {
+    margin-top: 3px;
+    margin-bottom: 3px; } }
 @media (min-device-width: 520px) and (max-device-width: 10000px) {
-  margin: 0px 10px 0px 10px; }
+  h2 {
+    margin-top: 3px;
+    margin-bottom: 3px; } }
 
 /*# sourceMappingURL=main.css.map */
