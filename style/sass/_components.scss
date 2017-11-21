@@ -1,0 +1,38 @@
+.web-links {
+  list-style-type: none;
+  align-self: center;
+
+  &> li {
+      margin-top: 0.3em;
+      @include pop-animation();
+  }
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-pic {
+  border-radius: 100%;
+  padding: 15px;
+  border: 15px solid #776e65;
+  flex: 1;
+  align-self: center;
+  @include pop-animation();
+}
+
+@mixin parallax-maker($className, $imageUrl) {
+  .#{$className} {
+    background-image: url($imageUrl);
+    height: 500px;
+    width: inherit;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@include parallax-maker('parallax-example', '/data/me.jpg');

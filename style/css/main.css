@@ -1,34 +1,30 @@
+/** Animations */
+@keyframes pop {
+  50% {
+    transform: scale(1.1); } }
+@keyframes fade-in-from-below {
+  0% {
+    opacity: 0;
+    transform: translateY(1em); }
+  100% {
+    opacity: 1;
+    transform: translateY(0em); } }
+/**
+ * ... and their mixins/classes
+ */
+.fade-in-from-below {
+  animation: 1s ease-out  0s  1 fade-in-from-below; }
+
 /**
  * A very simple layout system: only a single breaking-point
  * and a 3 column grid
  */
-* {
-  font-family: 'Barlow', sans-serif;
-  font-weight: 100;
-  color: #776e65;
-  background-color: #faf8ef; }
-
-body {
-  margin: 0px 30px 0px 30px; }
-
-.title {
-  font-weight: bold; }
-
-.text-centered {
-  text-align: center; }
-
-.font-console {
-  font-family: VT323;
-  color: #cdaf9a;
-  font-size: 1.5em; }
-
 .col {
   display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  word-break: break-all;
   flex-direction: column; }
 
 .col-centered {
@@ -44,30 +40,6 @@ body {
   justify-content: center;
   width: 100%; }
 
-.web-links {
-  list-style-type: none;
-  align-self: center; }
-  .web-links > li {
-    margin-top: 0.3em; }
-    .web-links > li:hover, .web-links > li:focus {
-      animation: 0.3s ease-out 0s  1 pop; }
-
-.profile-container {
-  display: flex;
-  flex-direction: column; }
-
-.profile-pic {
-  border-radius: 100%;
-  padding: 15px;
-  border: 15px solid #776e65;
-  flex: 1;
-  align-self: center; }
-  .profile-pic:hover, .profile-pic:focus {
-    animation: 0.3s ease-out 0s  1 pop; }
-
-.fade-in-from-below {
-  animation: 1s ease-out  0s  1 fade-in-from-below; }
-
 /* Create the actual grid */
 @media (min-device-width: 0px) and (max-device-width: 520px) {
   h1 {
@@ -82,6 +54,11 @@ body {
     height: 14px;
     background-color: #776e65;
     border: none; }
+    hr.small {
+      width: 60%;
+      padding-left: 20%;
+      padding-right: 20%;
+      height: 4.6666666667px; }
 
   .container {
     width: 100%;
@@ -116,6 +93,11 @@ body {
     height: 12px;
     background-color: #776e65;
     border: none; }
+    hr.small {
+      width: 60%;
+      padding-left: 20%;
+      padding-right: 20%;
+      height: 4px; }
 
   .container {
     width: 80%;
@@ -137,16 +119,62 @@ body {
 
   .on-l-hide {
     display: none; } }
-/** Animations */
-@keyframes pop {
-  50% {
-    transform: scale(1.1); } }
-@keyframes fade-in-from-below {
-  0% {
-    opacity: 0;
-    transform: translateY(1em); }
-  100% {
-    opacity: 1;
-    transform: translateY(0em); } }
+.web-links {
+  list-style-type: none;
+  align-self: center; }
+  .web-links > li {
+    margin-top: 0.3em; }
+    .web-links > li:hover, .web-links > li:focus {
+      animation: 0.3s ease-out 0s  1 pop; }
+
+.profile-container {
+  display: flex;
+  flex-direction: column; }
+
+.profile-pic {
+  border-radius: 100%;
+  padding: 15px;
+  border: 15px solid #776e65;
+  flex: 1;
+  align-self: center; }
+  .profile-pic:hover, .profile-pic:focus {
+    animation: 0.3s ease-out 0s  1 pop; }
+
+.parallax-example {
+  background-image: url("/data/me.jpg");
+  height: 500px;
+  width: inherit;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.title {
+  font-weight: bold; }
+
+.text-centered {
+  text-align: center; }
+
+.font-console {
+  font-family: VT323;
+  color: #cdaf9a;
+  font-size: 1.5em; }
+
+.align-self-centered {
+  align-self: center; }
+
+* {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 100;
+  color: #776e65;
+  background-color: #faf8ef; }
+
+body {
+  margin: 0px 30px 0px 30px; }
+
+p {
+  margin: 0px 10px 0px 10px;
+  font-size: 23px;
+  padding-top: 1em; }
 
 /*# sourceMappingURL=main.css.map */

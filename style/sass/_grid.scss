@@ -1,0 +1,102 @@
+/**
+ * A very simple layout system: only a single breaking-point
+ * and a 3 column grid
+ */
+
+$breaking-point: 520px;
+
+$map: (
+  s: (
+    font-max: 70px,
+    font-normal: 45px,
+    min-width: 0px,
+    max-width: $breaking-point,
+    container-size: 100%,
+    container-padding: 0%,
+    profile-pic-size: 200px
+  ),
+  l: (
+    font-max: 60px,
+    font-normal: 30px,
+    min-width: $breaking-point,
+    max-width: 10000px,
+    container-size: 80%,
+    container-padding: 10%,
+    profile-pic-size: 350px
+  )
+);
+
+.col {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+.col-centered {
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-wrap: wrap; // handle overflow through a break
+  justify-content: center; // center individual children
+  width: 100%;
+}
+
+@mixin grid-maker($size) {
+  $sizeMap: map-get($map, $size);
+  @media (min-device-width: map-get($sizeMap, min-width)) and (max-device-width: map-get($sizeMap, max-width)) {
+    h1 {
+      font-size: map-get($sizeMap, font-max);
+      font-weight: bold;
+      color: #776e65;
+    }
+    hr {
+      width: 80%;
+      padding-left: 10%;
+      padding-right: 10%;
+      height: map-get($sizeMap, font-max)/5;
+      background-color: #776e65;
+      border: none;
+      &.small {
+        width: 60%;
+        padding-left: 20%;
+        padding-right: 20%;
+        height: map-get($sizeMap, font-max)/15;
+      }
+    }
+    .container {
+      width: map-get($sizeMap, container-size);
+      padding-left: map-get($sizeMap, container-padding);
+      padding-right: map-get($sizeMap, container-padding);
+      font-size: map-get($sizeMap, font-normal);
+    }
+    .col-#{$size}-1 {
+      width: 33.33%;
+    }
+    .col-#{$size}-2 {
+      width: 66.66%;
+    }
+    .col-#{$size}-3 {
+      width: 100%;
+    }
+    .col-#{$size}-half {
+      width: 50%;
+    }
+    .on-#{$size}-hide {
+      display: none;
+    }
+  }
+}
+
+/* Create the actual grid */
+@each $size, $value in $map {
+  @include grid-maker($size);
+}
