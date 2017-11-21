@@ -1,3 +1,5 @@
+@import 'variables';
+
 .web-links {
   list-style-type: none;
   align-self: center;
@@ -23,6 +25,13 @@
   @include pop-animation();
 }
 
+@mixin component-maker($size) {
+  $sizeMap: map-get($map, $size);
+  @media (min-device-width: map-get($sizeMap, min-width)) and (max-device-width: map-get($sizeMap, max-width)) {
+
+  }
+}
+
 @mixin parallax-maker($className, $imageUrl) {
   .#{$className} {
     background-image: url($imageUrl);
@@ -35,4 +44,7 @@
   }
 }
 
-@include parallax-maker('parallax-example', '/data/me.jpg');
+/* Create the actual grid */
+@each $size, $value in $map {
+  @include component-maker($size);
+}

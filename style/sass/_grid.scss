@@ -1,30 +1,9 @@
+@import 'variables';
+
 /**
  * A very simple layout system: only a single breaking-point
  * and a 3 column grid
  */
-
-$breaking-point: 520px;
-
-$map: (
-  s: (
-    font-max: 70px,
-    font-normal: 45px,
-    min-width: 0px,
-    max-width: $breaking-point,
-    container-size: 100%,
-    container-padding: 0%,
-    profile-pic-size: 200px
-  ),
-  l: (
-    font-max: 60px,
-    font-normal: 30px,
-    min-width: $breaking-point,
-    max-width: 10000px,
-    container-size: 80%,
-    container-padding: 10%,
-    profile-pic-size: 350px
-  )
-);
 
 .col {
   display: flex;

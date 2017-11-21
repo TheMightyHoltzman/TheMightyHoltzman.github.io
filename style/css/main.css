@@ -140,15 +140,7 @@
   .profile-pic:hover, .profile-pic:focus {
     animation: 0.3s ease-out 0s  1 pop; }
 
-.parallax-example {
-  background-image: url("/data/me.jpg");
-  height: 500px;
-  width: inherit;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
-
+/* Create the actual grid */
 .title {
   font-weight: bold; }
 
