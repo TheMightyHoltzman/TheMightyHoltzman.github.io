@@ -32,25 +32,6 @@
 @mixin grid-maker($size) {
   $sizeMap: map-get($map, $size);
   @media (min-device-width: map-get($sizeMap, min-width)) and (max-device-width: map-get($sizeMap, max-width)) {
-    h1 {
-      font-size: map-get($sizeMap, font-max);
-      font-weight: bold;
-      color: #776e65;
-    }
-    hr {
-      width: 80%;
-      padding-left: 10%;
-      padding-right: 10%;
-      height: map-get($sizeMap, font-max)/5;
-      background-color: #776e65;
-      border: none;
-      &.small {
-        width: 60%;
-        padding-left: 20%;
-        padding-right: 20%;
-        height: map-get($sizeMap, font-max)/15;
-      }
-    }
     .container {
       width: map-get($sizeMap, container-size);
       padding-left: map-get($sizeMap, container-padding);

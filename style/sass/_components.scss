@@ -16,19 +16,47 @@
 
 }
 
-.profile-pic {
-  border-radius: 100%;
-  padding: 15px;
-  border: 15px solid #776e65;
-  flex: 1;
-  align-self: center;
-  @include pop-animation();
-}
-
 @mixin component-maker($size) {
   $sizeMap: map-get($map, $size);
   @media (min-device-width: map-get($sizeMap, min-width)) and (max-device-width: map-get($sizeMap, max-width)) {
 
+    h1 {
+      font-size: map-get($sizeMap, font-max);
+      font-weight: bold;
+      color: #776e65;
+    }
+
+    hr {
+      width: 100%;
+      height: map-get($sizeMap, font-max)/5;
+      background-color: #776e65;
+      border: none;
+      &.small {
+        width: 80%;
+        height: map-get($sizeMap, font-max)/15;
+      }
+    }
+
+    .introduction {
+      @if $size=='s' {
+        font-size: 45px;
+      }
+      @if $size=='l' {
+        font-size: 40px;
+      }
+    }
+
+    .profile-pic {
+      border-radius: 100%;
+      padding: 15px;
+      border: 15px solid #776e65;
+      flex: 1;
+      align-self: center;
+      @include pop-animation();
+      @if $size == 'l' {
+        max-width: 180px;
+      }
+    }
   }
 }
 

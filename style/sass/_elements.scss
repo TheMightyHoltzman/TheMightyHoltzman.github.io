@@ -1,3 +1,5 @@
+@import 'variables';
+
 * {
   font-family: 'Barlow', sans-serif;
   font-weight: 100;
@@ -10,7 +12,24 @@ body {
 }
 
 p {
-  margin: 0px 10px 0px 10px;
   font-size: 23px;
-  padding-top: 1em;
+}
+
+@mixin element-maker($size) {
+  $sizeMap: map-get($map, $size);
+  @media (min-device-width: map-get($sizeMap, min-width)) and (max-device-width: map-get($sizeMap, max-width)) {
+    @if $size == 's' {
+      p {
+        margin: 0px 10px 15px 10px;
+      }
+    }
+    @if $size == 'l' {
+      margin: 0px 10px 0px 10px;
+    }
+  }
+}
+
+/* Create the actual grid */
+@each $size, $value in $map {
+  @include element-maker($size);
 }
