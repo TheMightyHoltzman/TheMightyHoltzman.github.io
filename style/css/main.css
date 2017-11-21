@@ -4,6 +4,7 @@
  */
 * {
   font-family: 'Barlow', sans-serif;
+  font-weight: 100;
   color: #776e65;
   background-color: #faf8ef; }
 
@@ -15,6 +16,11 @@ body {
 
 .text-centered {
   text-align: center; }
+
+.font-console {
+  font-family: VT323;
+  color: #cdaf9a;
+  font-size: 1.5em; }
 
 .col {
   display: flex;
@@ -37,6 +43,30 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%; }
+
+.web-links {
+  list-style-type: none;
+  align-self: center; }
+  .web-links > li {
+    margin-top: 0.3em; }
+    .web-links > li:hover, .web-links > li:focus {
+      animation: 0.3s ease-out 0s  1 pop; }
+
+.profile-container {
+  display: flex;
+  flex-direction: column; }
+
+.profile-pic {
+  border-radius: 100%;
+  padding: 15px;
+  border: 15px solid #776e65;
+  flex: 1;
+  align-self: center; }
+  .profile-pic:hover, .profile-pic:focus {
+    animation: 0.3s ease-out 0s  1 pop; }
+
+.fade-in-from-below {
+  animation: 1s ease-out  0s  1 fade-in-from-below; }
 
 /* Create the actual grid */
 @media (min-device-width: 0px) and (max-device-width: 520px) {
@@ -72,17 +102,7 @@ body {
     width: 50%; }
 
   .on-s-hide {
-    display: none; }
-
-  .profile-container {
-    display: flex;
-    flex-direction: column; }
-
-  .profile-pic {
-    border-radius: 100%;
-    padding: 15px;
-    border: 15px solid #776e65;
-    flex: 1; } }
+    display: none; } }
 @media (min-device-width: 520px) and (max-device-width: 10000px) {
   h1 {
     font-size: 60px;
@@ -116,20 +136,17 @@ body {
     width: 50%; }
 
   .on-l-hide {
-    display: none; }
-
-  .profile-container {
-    display: flex;
-    flex-direction: column; }
-
-  .profile-pic {
-    border-radius: 100%;
-    padding: 15px;
-    border: 15px solid #776e65;
-    flex: 1; } }
+    display: none; } }
 /** Animations */
 @keyframes pop {
   50% {
-    transform: scale(1.2); } }
+    transform: scale(1.1); } }
+@keyframes fade-in-from-below {
+  0% {
+    opacity: 0;
+    transform: translateY(1em); }
+  100% {
+    opacity: 1;
+    transform: translateY(0em); } }
 
 /*# sourceMappingURL=main.css.map */

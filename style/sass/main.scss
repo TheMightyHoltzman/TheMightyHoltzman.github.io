@@ -28,6 +28,7 @@ $map: (
 
 * {
   font-family: 'Barlow', sans-serif;
+  font-weight: 100;
   color: #776e65;
   background-color: rgb(250, 248, 239);
 }
@@ -42,6 +43,12 @@ body {
 
 .text-centered {
   text-align: center;
+}
+
+.font-console {
+  font-family: VT323;
+  color: #cdaf9a;
+  font-size: 1.5em;
 }
 
 .col {
@@ -69,6 +76,41 @@ body {
   width: 100%;
 }
 
+@mixin pop-animation() {
+  &:hover, &:focus {
+    animation: 0.3s ease-out 0s  1 pop;;
+  }
+}
+
+.web-links {
+  list-style-type: none;
+  align-self: center;
+
+  &> li {
+      margin-top: 0.3em;
+      @include pop-animation();
+  }
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-pic {
+  border-radius: 100%;
+  padding: 15px;
+  border: 15px solid #776e65;
+  flex: 1;
+  align-self: center;
+  @include pop-animation();
+}
+
+.fade-in-from-below {
+  animation: 1s ease-out  0s  1 fade-in-from-below;
+}
+
 @mixin parallax-maker($className, $imageUrl) {
   .#{$className} {
     background-image: url($imageUrl);
@@ -79,10 +121,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
-}
-
-#the-canvas {
-
 }
 
 @mixin grid-maker($size) {
@@ -122,16 +160,6 @@ body {
     .on-#{$size}-hide {
       display: none;
     }
-    .profile-container {
-      display: flex;
-      flex-direction: column;
-    }
-    .profile-pic {
-      border-radius: 100%;
-      padding: 15px;
-      border: 15px solid #776e65;
-      flex: 1;
-    }
   }
 }
 
@@ -141,6 +169,19 @@ body {
 }
 
 /** Animations */
-@keyframes pop{
-  50%  {transform: scale(1.2);}
+@keyframes pop {
+  50%  {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fade-in-from-below {
+  0% {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0em);
+  }
 }
